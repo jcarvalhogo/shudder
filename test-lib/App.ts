@@ -2,6 +2,7 @@ import { Application, PageBasic } from "../src/core";
 import { Center, Colors, Text, Container, Row, Column } from "../src/elements";
 
 new Application({
+    staticDirectory: { dirName: __dirname, directory: ['public','arquivos'] },
     home: new PageBasic({
         title: 'Pagina Pasica',
         child: new Column({

@@ -26,12 +26,15 @@ export class Application {
     }
 
     private setStaticFolder() {
-        this.params
-            .staticDirectory?.directory || []
+        if (this.params.staticDirectory !== undefined) {
+            let dirName = this.params.staticDirectory.dirName || '';
+            this.params
+                .staticDirectory.directory
                 .forEach((d) => this.express
-                    .use(express.static(path.join(this.params.staticDirectory?.dirName || '', d)
+                    .use(express.static(path.join(dirName, d)
                     ))
                 );
+        }
     }
 
 
