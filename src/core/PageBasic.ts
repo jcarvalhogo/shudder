@@ -1,6 +1,6 @@
 
-import { SingleChildRenderMethods } from './SingleChildRenderMethods';
-import { PageBasicParams } from '../core/CoreParams';
+import { SingleChildRenderMethods } from '../elements/renders/SingleChildRenderMethods';
+import { PageBasicParams } from './params/CoreParams';
 
 export class PageBasic implements SingleChildRenderMethods {
 

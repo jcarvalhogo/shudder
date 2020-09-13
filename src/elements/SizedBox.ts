@@ -1,6 +1,6 @@
-import { Size } from "./ElementesParams";
-import { resolverSize } from "./Resolver";
-import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
+import { Size } from "./params/ElementesParams";
+import { resolverSize } from "./resolvers/Resolver";
+import { SingleChildRenderMethods } from "./renders/SingleChildRenderMethods";
 
 export class SizedBox implements SingleChildRenderMethods{
     public constructor(private size: Size, child: string) { };

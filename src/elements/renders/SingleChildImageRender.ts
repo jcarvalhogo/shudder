@@ -1,5 +1,5 @@
-import { SingleChildRenderParams, Flexbox, BackgroundImageParams } from "./ElementesParams";
-import { resolveSingleChildRender, resolveSingleImagedRender } from "./Resolver";
+import { SingleChildRenderParams, Flexbox, BackgroundImageParams } from "../params/ElementesParams";
+import { resolveSingleChildRender, resolveSingleImagedRender } from "../resolvers/Resolver";
 import { SingleChildRender } from "./SingleChildRender";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 

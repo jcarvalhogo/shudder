@@ -1,7 +1,7 @@
-import { ContainerParams, BackgroundImageParams } from "./ElementesParams";
-import { SingleChildRender } from "./SingleChildRender";
-import { resolverAlignment } from "./Resolver";
-import { SingleChilImagedRender } from "./SingleChildImageRender";
+import { ContainerParams, BackgroundImageParams } from "./params/ElementesParams";
+import { SingleChildRender } from "./renders/SingleChildRender";
+import { resolverAlignment } from "./resolvers/Resolver";
+import { SingleChilImagedRender } from "./renders/SingleChildImageRender";
 
 export class ContainerImage extends SingleChilImagedRender {
 

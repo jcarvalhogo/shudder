@@ -1,5 +1,5 @@
-import { EdgeInsetsGeometry } from './EdgeInsetsGeometry'
-import { OnlyValues, SymmetricValues } from './ElementesParams';
+import { EdgeInsetsGeometry } from './params/EdgeInsetsGeometry'
+import { OnlyValues, SymmetricValues } from './params/ElementesParams';
 
 export class EdgeInsets implements EdgeInsetsGeometry {
 

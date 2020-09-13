@@ -1,5 +1,5 @@
-import { TextRenderParams, TextTag } from "./ElementesParams";
-import { resolverTextRenderParams } from "./Resolver";
+import { TextRenderParams, TextTag } from "../params/ElementesParams";
+import { resolverTextRenderParams } from "../resolvers/Resolver";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 
 

@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
 
-import { ApplicationParams } from './CoreParams';
+import { ApplicationParams } from './params/CoreParams';
 import { Routes } from './RoutesUri';
 
 //app.set('port', process.env.PORT || 3000)

@@ -1,4 +1,4 @@
-import { Routes } from "./RoutesUri";
+import { Routes } from "../RoutesUri";
 
 export interface StaticDirectory {
     directory: string[];

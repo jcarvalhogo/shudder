@@ -1,5 +1,5 @@
-import { MultiChildRender } from "./MultiChildRender";
-import { ContainerMultipleParams } from "./ElementesParams";
+import { MultiChildRender } from "./renders/MultiChildRender";
+import { ContainerMultipleParams } from "./params/ElementesParams";
 
 export class Column extends MultiChildRender {
 

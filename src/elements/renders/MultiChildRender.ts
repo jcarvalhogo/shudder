@@ -1,5 +1,5 @@
-import { ContainerMultipleParams } from "./ElementesParams";
-import { resolverMultiChildRender } from "./Resolver";
+import { ContainerMultipleParams } from "../params/ElementesParams";
+import { resolverMultiChildRender } from "../resolvers/Resolver";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 
 

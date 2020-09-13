@@ -1,5 +1,5 @@
-import { ImageRenderParams } from "./ElementesParams";
-import { resolverImageRender } from "./Resolver";
+import { ImageRenderParams } from "../params/ElementesParams";
+import { resolverImageRender } from "../resolvers/Resolver";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 
 export abstract class ImageRender implements SingleChildRenderMethods {

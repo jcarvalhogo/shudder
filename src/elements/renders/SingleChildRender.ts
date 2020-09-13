@@ -1,5 +1,5 @@
-import { SingleChildRenderParams, Flexbox } from "./ElementesParams";
-import { resolveSingleChildRender } from "./Resolver";
+import { SingleChildRenderParams, Flexbox } from "../params/ElementesParams";
+import { resolveSingleChildRender } from "../resolvers/Resolver";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 
 export abstract class SingleChildRender implements SingleChildRenderMethods {

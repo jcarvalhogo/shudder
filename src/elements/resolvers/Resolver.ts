@@ -1,4 +1,4 @@
-import { EdgeInsetsGeometry } from './EdgeInsetsGeometry'
+import { EdgeInsetsGeometry } from '../params/EdgeInsetsGeometry'
 import {
     Size,
     ContainerMultipleParams,
@@ -11,7 +11,7 @@ import {
     AlignTextOption,
     ImageRenderParams,
     BackgroundImageParams
-} from './ElementesParams';
+} from '../params/ElementesParams';
 
 function resolverEdgeInsets(edge?: EdgeInsetsGeometry, prefix?: string): string {
     if (edge !== undefined && prefix !== undefined) {

@@ -1,6 +1,6 @@
-import { ContainerParams } from "./ElementesParams";
-import { SingleChildRender } from "./SingleChildRender";
-import { resolverAlignment } from "./Resolver";
+import { ContainerParams } from "./params/ElementesParams";
+import { SingleChildRender } from "./renders/SingleChildRender";
+import { resolverAlignment } from "./resolvers/Resolver";
 
 export class Container extends SingleChildRender {
 

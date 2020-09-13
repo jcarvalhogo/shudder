@@ -1,5 +1,5 @@
-import { ContainerParams } from "./ElementesParams";
-import { SingleChildRender } from "./SingleChildRender";
+import { ContainerParams } from "./params/ElementesParams";
+import { SingleChildRender } from "./renders/SingleChildRender";
 
 
 export class Center extends SingleChildRender {
@@ -7,9 +7,4 @@ export class Center extends SingleChildRender {
     public constructor(params: ContainerParams) {
         super(params, { flexDirection: 'column', alignItems: 'center', justifyContent: 'center' })
     }
-
-    public build(): string {
-        return this.createElement();
-    };
-
 }

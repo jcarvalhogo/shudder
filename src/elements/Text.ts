@@ -1,5 +1,5 @@
-import { TextOverflow, AlignTextOption, TextFontOption } from './ElementesParams'
-import { TextRender } from './TextRender';
+import { TextOverflow, AlignTextOption, TextFontOption } from './params/ElementesParams'
+import { TextRender } from './renders/TextRender';
 
 export class Text extends TextRender {
     public constructor(value: string, style?: TextFontOption, textOverflow?: TextOverflow, textAlign?: AlignTextOption) {

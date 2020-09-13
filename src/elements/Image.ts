@@ -1,5 +1,5 @@
-import { ImageParams } from "./ElementesParams";
-import { ImageRender } from "./ImageRender";
+import { ImageParams } from "./params/ElementesParams";
+import { ImageRender } from "./renders/ImageRender";
 
 export class Image extends ImageRender {
 

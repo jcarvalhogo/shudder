@@ -1,6 +1,4 @@
 import { EdgeInsetsGeometry } from './EdgeInsetsGeometry';
-import { StaticDirectory } from '../core/CoreParams';
-import { Routes } from '../core/RoutesUri';
 
 type ColorValue = string;
 
