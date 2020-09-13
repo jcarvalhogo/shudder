@@ -48,7 +48,7 @@ export interface ChildElement {
 }
 
 export interface ChildElements {
-    children?: string[];
+    children?: elementype[];
 }
 
 export interface Alignment {

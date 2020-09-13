@@ -4,7 +4,7 @@ import path from 'path';
 
 import { ApplicationParams } from './params/CoreParams';
 import { Routes } from './RoutesUri';
-import { resolverHome } from './resolvers/CoreResolvers';
+import { resolverPage } from './resolvers/CoreResolvers';
 
 //app.set('port', process.env.PORT || 3000)
 
@@ -42,7 +42,7 @@ export class Application {
 
     private setRouter(): void {
         this.express.get('/', (req: Request, res: Response) => {
-            res.send(resolverHome(this.params.home));
+            res.send(resolverPage(this.params.home));
         });
 
         if (this.params.router !== undefined) {

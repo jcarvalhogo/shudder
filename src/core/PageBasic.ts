@@ -1,6 +1,7 @@
 
 import { SingleChildRenderMethods } from '../elements/renders/SingleChildRenderMethods';
 import { PageBasicParams } from './params/CoreParams';
+import { resolverPage } from './resolvers/CoreResolvers';
 
 export class PageBasic implements SingleChildRenderMethods {
 
@@ -16,7 +17,7 @@ export class PageBasic implements SingleChildRenderMethods {
             <title>${this.params.title}</title>
         </head>
         <body style="margin:0px;padding:0px;">
-            ${this.params.child}
+            ${resolverPage(this.params.child)}
             <script src="/reload/reload.js"></script>
         </body>
         </html>

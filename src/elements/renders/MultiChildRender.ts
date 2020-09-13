@@ -13,7 +13,7 @@ export class MultiChildRender implements SingleChildRenderMethods {
         let children: string = '';
         if (this.params.p.children !== undefined) {
             this.params.p.children.forEach((child) => {
-                children += child;
+                children += child.createElement();
             });
         }
 
