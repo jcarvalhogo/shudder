@@ -2,7 +2,7 @@ import { ContainerParams } from "./ElementesParams";
 import { SingleChildRender } from "./SingleChildRender";
 
 
-export class CenterElement extends SingleChildRender {
+export class Center extends SingleChildRender {
 
     public constructor(params: ContainerParams) {
         super(params, { flexDirection: 'column', alignItems: 'center', justifyContent: 'center' })

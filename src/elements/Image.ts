@@ -1,7 +1,7 @@
 import { ImageParams } from "./ElementesParams";
 import { ImageRender } from "./ImageRender";
 
-export class ImageElement extends ImageRender {
+export class Image extends ImageRender {
 
     constructor(params: ImageParams) {
         super(params);

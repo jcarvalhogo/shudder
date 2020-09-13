@@ -2,7 +2,7 @@
 import { SingleChildRenderMethods } from './SingleChildRenderMethods';
 import { PageBasicParams } from '../core/CoreParams';
 
-export default class PageElement implements SingleChildRenderMethods {
+export class PageBasic implements SingleChildRenderMethods {
 
     public constructor(private params: PageBasicParams) { }
 
