@@ -1,5 +1,5 @@
 import { SingleChildRenderParams, Flexbox } from "../params/ElementesParams";
-import { resolveSingleChildRender } from "../resolvers/Resolver";
+import { resolveSingleChildRender, reslverChild } from "../resolvers/Resolver";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 
 export abstract class SingleChildRender implements SingleChildRenderMethods {
@@ -9,7 +9,7 @@ export abstract class SingleChildRender implements SingleChildRenderMethods {
     public createElement(): string {
         return `
             <div style="display:flex;${resolveSingleChildRender(this.params, this.flexbox)};">
-                ${this.params.child || ''}
+                ${reslverChild(this.params.child)}
             </div>
         `;
     };

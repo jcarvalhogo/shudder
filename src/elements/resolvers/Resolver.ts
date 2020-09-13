@@ -12,6 +12,7 @@ import {
     ImageRenderParams,
     BackgroundImageParams
 } from '../params/ElementesParams';
+import { elementype } from '../../core/resolvers/CoreResolvers';
 
 function resolverEdgeInsets(edge?: EdgeInsetsGeometry, prefix?: string): string {
     if (edge !== undefined && prefix !== undefined) {
@@ -143,5 +144,9 @@ export function resolverTextRenderParams(params: TextRenderParams): string {
         style += resolverTextDecorationOption(params.textDecorationOption || {});
     }
     return style;
+}
+
+export function reslverChild(child?: elementype): string {
+    return (child === undefined) ? '' : child.createElement();
 }
 

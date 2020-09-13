@@ -1,11 +1,16 @@
 import { Application } from "../src/core";
 
-import { Center, Colors } from "../src/elements";
+import { Center, Colors, Text, Container } from "../src/elements";
 
 new Application({
-    home: new Center({
+    home: new Container({
         width: '300px',
         height: '300px',
         backgroundColor: Colors.blue(),
-    }).createElement(),
+        child: new Container({
+            width: '48px',
+            height: '48px',
+            backgroundColor: Colors.brown()
+        }),
+    })
 });

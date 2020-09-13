@@ -1,4 +1,5 @@
 import { EdgeInsetsGeometry } from './EdgeInsetsGeometry';
+import { elementype } from '../../core/resolvers/CoreResolvers';
 
 type ColorValue = string;
 
@@ -43,7 +44,7 @@ export interface Size {
 }
 
 export interface ChildElement {
-    child?: string;
+    child?: elementype;
 }
 
 export interface ChildElements {
