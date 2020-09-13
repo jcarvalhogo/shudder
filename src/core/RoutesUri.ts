@@ -1,4 +1,4 @@
-import { Request, Response, RequestHandler } from "express";
+import { Request, Response } from "express";
 
 export interface RouterPath {
     handle: (req?: Request) => any;

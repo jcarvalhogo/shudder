@@ -1,32 +1,25 @@
 import { Application, PageBasic } from "../src/core";
-import { Center, Colors, Text, Container, Row, Column } from "../src/elements";
+import { Column, Row, SizedBox, Text } from "../src/elements";
+import { NavBar } from "./Navbar";
+import { Menus } from "./Menus";
+import { Corpo } from "./Corpo";
+
+console.log(__dirname);
+
 
 new Application({
-    staticDirectory: { dirName: __dirname, directory: ['public','arquivos'] },
+    staticDirectory: { dirName: __dirname, directory: ['public', 'arquivos'] },
     home: new PageBasic({
-        title: 'Pagina Pasica',
+        title: 'Risos Clone',
         child: new Column({
-            alignContent: 'space-between',
+            width: '100%',
+            height: '2000px',
             alignItems: 'center',
-            backgroundColor: Colors.cyan(900),
-            width: '80px',
-            height: '260px',
             children: [
-                new Container({
-                    width: '48px',
-                    height: '48px',
-                    backgroundColor: Colors.blue(),
-                }),
-                new Container({
-                    width: '48px',
-                    height: '48px',
-                    backgroundColor: Colors.blue(),
-                }),
-                new Container({
-                    width: '48px',
-                    height: '48px',
-                    backgroundColor: Colors.blue(),
-                })
+                NavBar(),
+                Menus(),
+                new SizedBox({ height: '60px' }, ''),
+                Corpo(),
             ]
         }),
     }),
