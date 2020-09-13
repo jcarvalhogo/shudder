@@ -15,8 +15,6 @@ export class Application {
     public constructor(private params: ApplicationParams) {
         this.express = express();
         this.initServer();
-
-        console.log('Application DirName: ' + __dirname);
     }
 
     private initServer(): void {

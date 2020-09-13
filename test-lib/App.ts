@@ -4,9 +4,6 @@ import { NavBar } from "./Navbar";
 import { Menus } from "./Menus";
 import { Corpo } from "./Corpo";
 
-console.log(__dirname);
-
-
 new Application({
     staticDirectory: { dirName: __dirname, directory: ['public', 'arquivos'] },
     home: new PageBasic({

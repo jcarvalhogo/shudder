@@ -1,6 +1,6 @@
 {
   "name": "shudder",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "lib/core.js",
   "types": "lib",
@@ -13,10 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "typescript": "^4.0.2"
+    "express": "^4.17.1"
   },
   "devDependencies": {
+    "typescript": "^4.0.2",
     "@types/cors": "^2.8.7",
     "@types/express": "^4.17.8",
     "@types/node": "^14.10.1",
