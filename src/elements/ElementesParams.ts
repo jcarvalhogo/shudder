@@ -1,0 +1,141 @@
+import { EdgeInsetsGeometry } from './EdgeInsetsGeometry';
+import { StaticDirectory } from '../core/CoreParams';
+import { Routes } from '../core/RoutesUri';
+
+type ColorValue = string;
+
+type AlignContent = 'space-around' | 'space-between' | 'space-evenly' | 'flex-start' | 'flex-end' | 'center';
+type AlignItems = 'flex-end' | 'flex-start' | 'center';
+
+type FlexWrap = 'wrap' | 'nowrap' | 'wrap-reverse';
+type FlexDirection = 'column' | 'column-reverse' | 'row' | 'row-reverse';
+
+type FontStyle = 'italic' | 'normal' | 'oblique' | 'inherit' | 'initial' | 'unset';
+type FontWeight = 'bold' | 'bolder' | 'lighter' | 'normal' | 'inherit' | 'initial' | 'unset';
+
+export type TextTag = 'label' | 'p' | 'b' | 'strong' | 'i' | 'em' | 'mark' | 'small' | 'del' | 'ins' | 'sub' | 'sup';
+type TextDecoration = 'dotted' | 'dashed' | 'double' | 'line-through' | 'none' | 'overline' | 'solid' | 'underline' | 'wavy';
+type TextDecorationStyle = 'dotted' | 'dashed' | 'double' | 'line-through' | 'none' | 'overline' | 'solid' | 'underline' | 'wavy';
+type TextDecorationLine = 'line-through' | 'none' | 'overline' | 'underline' | 'inherit' | 'initial' | 'unset';
+type TextAlign = 'center' | 'end' | 'justify' | 'left' | 'right' | 'start' | 'inherit' | 'initial' | 'unset';
+type TextIndent = 'inherit' | 'initial' | 'unset';
+type TextJustify = 'auto' | 'distribute' | 'distribute-all-lines' | 'inter-cluster' | 'inter-ideograph' | 'inter-word' | 'kashida' | 'newspaper' | 'inherit' | 'initial' | 'unset';
+export type TextOverflow = 'clip' | 'ellipsis' | 'inherit' | 'initial' | 'unset';
+type BackgroundOrigin = 'border-box' | 'content-box' | 'inherit' | 'initial' | 'padding-box' | 'unset';
+type BackgroundPosition = 'bottom' | 'center' | 'inherit' | 'initial' | 'left' | 'right' | 'top' | 'unset';
+
+type BbackgroundRepeat = 'inherit' | 'initial' | 'no-repeat' | 'repeat' | 'repeat-x' | 'repeat-y' | 'round' | 'space' | 'unset';
+type BackgroundSize = 'auto' | 'contain' | 'cover' | '100% 100%';
+
+export interface OnlyValues {
+    top: number;
+    bottom: number;
+    left: number;
+    right: number;
+}
+
+export interface SymmetricValues {
+    horizontal: number;
+    vertical: number;
+}
+
+export interface Size {
+    width?: string;
+    height?: string;
+}
+
+export interface ChildElement {
+    child?: string;
+}
+
+export interface ChildElements {
+    children?: string[];
+}
+
+export interface Alignment {
+    alignContent?: AlignContent;
+    alignItems?: AlignItems;
+}
+
+export interface ContainerMultipleParams extends Size, Margin, backgroundColor, Alignment, ChildElements { }
+
+export interface Margin {
+    margin?: EdgeInsetsGeometry;
+}
+
+export interface Padding {
+    padding?: EdgeInsetsGeometry;
+}
+
+export interface Color {
+    color?: ColorValue;
+}
+
+export interface backgroundColor {
+    backgroundColor?: ColorValue;
+}
+
+export interface TextFontOption extends Color {
+    fontFamily?: string;
+    fontStyle?: FontStyle;
+    fontWeight?: FontWeight;
+    fontSize?: string;
+}
+
+export interface TextTagOtption {
+    textTag?: TextTag;
+}
+
+export interface TextDecorationOption {
+    textDecoration?: TextDecoration;
+    textDecorationColor?: ColorValue;
+    textDecorationLine?: TextDecorationLine;
+    textDecorationStyle?: TextDecorationStyle;
+}
+
+export interface AlignTextOption {
+    textAlign?: TextAlign;
+    textIndent?: TextIndent;
+    textJustify?: TextJustify;
+    textOverflow?: TextOverflow;
+}
+
+export interface Flexbox {
+    flexDirection?: FlexDirection;
+    flexWrap?: FlexWrap;
+    justifyContent?: AlignContent;
+    alignItems?: AlignItems;
+}
+
+export interface TextRenderParams {
+    textFontOption?: TextFontOption;
+    textDecorationOption?: TextDecorationOption;
+    alignTextOption?: AlignTextOption;
+}
+
+export interface ImageParams extends Size {
+    src: string;
+    alt?: string;
+}
+
+export interface ImageRenderParams extends Size {
+    src: string;
+    alt?: string;
+}
+
+export interface MarginAndPadding extends Margin, Padding { }
+
+export interface ContainerParams extends Size, ChildElement, MarginAndPadding, backgroundColor, Alignment { }
+
+export interface SingleChildRenderParams extends Size, ChildElement, MarginAndPadding, backgroundColor, Color { }
+
+export interface BackgroundImageParams {
+    image?: string;
+    origin?: BackgroundOrigin;
+    position?: BackgroundPosition;
+    repeat?: BbackgroundRepeat;
+    size?: BackgroundSize;
+}
+
+
+
