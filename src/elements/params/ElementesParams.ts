@@ -1,5 +1,5 @@
 import { EdgeInsetsGeometry } from './EdgeInsetsGeometry';
-import { elementype } from '../../core/resolvers/CoreResolvers';
+import { elementype, targettype } from '../../core/resolvers/CoreResolvers';
 
 type ColorValue = string;
 
@@ -110,6 +110,13 @@ export interface TextRenderParams {
     textFontOption?: TextFontOption;
     textDecorationOption?: TextDecorationOption;
     alignTextOption?: AlignTextOption;
+}
+
+export interface LinkRenderParams {
+    href?: string,
+    type?: string,
+    child?: elementype,
+    target?: targettype,
 }
 
 export interface ImageParams extends Size {

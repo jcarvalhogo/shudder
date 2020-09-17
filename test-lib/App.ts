@@ -1,23 +1,27 @@
-import { Application, PageBasic } from "../src/core";
-import { Column, Row, SizedBox, Text } from "../src/elements";
-import { NavBar } from "./Navbar";
-import { Menus } from "./Menus";
-import { Corpo } from "./Corpo";
+import { text } from 'express';
+import { Application, PageBasic, NavigationPage } from '../src/core'
+import { Center, Colors, Column, Container, Link, Text } from '../src/elements'
+
+
+import { Contato } from './Contato';
+import { Produtos } from './Produtos';
+
 
 new Application({
-    staticDirectory: { dirName: __dirname, directory: ['public', 'arquivos'] },
+    pages: [
+        Contato(),
+        Produtos(),
+    ],
     home: new PageBasic({
-        title: 'Risos Clone',
-        child: new Column({
+        title: 'Page Basic',
+        child: new Center({
             width: '100%',
-            height: '2000px',
-            alignItems: 'center',
-            children: [
-                NavBar(),
-                Menus(),
-                new SizedBox({ height: '60px' }, ''),
-                Corpo(),
-            ]
+            height: '80px',
+            backgroundColor: Colors.lime(),
+            child: new Column({children:[
+                new Link({ target: '_self', href: '/contato', child: new Text('CONTATO'), }),
+                new Link({ target: '_self', href: '/produto', child: new Text('PRODUTO'), }),
+            ]}),
         }),
     }),
 });

@@ -15,10 +15,11 @@ export class PageBasic implements SingleChildRenderMethods {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${this.params.title}</title>
+
+            <link rel="stylesheet" href="style.css">
         </head>
-        <body style="margin:0px;padding:0px;">
+        <body">
             ${resolverPage(this.params.child)}
-            <script src="/reload/reload.js"></script>
         </body>
         </html>
         `;

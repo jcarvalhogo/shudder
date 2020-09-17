@@ -7,7 +7,7 @@ export class Text extends TextRender {
             value,
             {
                 alignTextOption: textAlign,
-                textFontOption: style
+                textFontOption: style,
             },
             'label'
         );

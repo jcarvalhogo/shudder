@@ -4,6 +4,8 @@
     "module": "commonjs",
     "declaration": true,
     "declarationMap": true,
+    "baseUrl": "src",
+    "rootDir": "src",
     "sourceMap": true,
     "outDir": "lib",
     "strict": true,
@@ -14,5 +16,4 @@
   "include": [
     "src",
   ]
-  
 }

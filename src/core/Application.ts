@@ -3,62 +3,65 @@ import cors from 'cors';
 import path from 'path';
 
 import { ApplicationParams } from './params/CoreParams';
-import { Routes } from './RoutesUri';
 import { resolverPage } from './resolvers/CoreResolvers';
+import { NavigationPage } from './NavigationPage';
+import { PageBasic } from 'core';
 
 //app.set('port', process.env.PORT || 3000)
 
 export class Application {
 
-    private express: express.Application;
+    private app: express.Application;
 
     public constructor(private params: ApplicationParams) {
-        this.express = express();
+        this.app = express();
         this.initServer();
     }
 
     private initServer(): void {
         this.setStaticFolder();
-
         this.middlewares();
         this.setRouter();
         this.run();
     }
 
     private setStaticFolder() {
+        this.app.use(express.static(path.join(__dirname, 'shared/css')));
+
         if (this.params.staticDirectory !== undefined) {
             let dirName = this.params.staticDirectory.dirName || '';
             this.params
                 .staticDirectory.directory
-                .forEach((d) => this.express
+                .forEach((d) => this.app
                     .use(express.static(path.join(dirName, d)
                     ))
                 );
         }
     }
 
-
     private middlewares(): void {
-        this.express.use(cors());
-        this.express.use(express.json());
+        this.app.use(cors());
+        this.app.use(express.json());
     }
 
     private setRouter(): void {
-        this.express.get('/', (req: Request, res: Response) => {
+        this.app.get('/', (req: Request, res: Response) => {
             res.send(resolverPage(this.params.home));
         });
 
-        if (this.params.router !== undefined) {
-            this.params.router.router.forEach(r => this.express.get(r.path, (req: Request, res: Response) => {
-                res.send(r.handle(req));
-            }));
+        if (this.params.pages !== undefined) {
+            this.params.pages.forEach((page) => {
+                this.app.get(page.getNavigationParams().path, (req: Request, res: Response) => {
+                    res.send(page.createElement());
+                });
+            });
         }
     }
 
 
     private run(): void {
-        let port = this.params.port || 5300;
-        this.express.listen(port, () => {
+        let port = process.env.PORT || this.params.port || 5300;
+        this.app.listen(port, () => {
             console.log(`SERVER RUN IN PORT: ${port}`);
         });
     }

@@ -7,5 +7,6 @@ export {
     Image,
     Row,
     SizedBox,
-    ContainerImage
+    ContainerImage,
+    Link
 } from './elements/params/exports';

@@ -7,6 +7,7 @@ import { Image } from '../Image';
 import { ContainerImage } from '../ContainerImage';
 import { Row } from '../Row';
 import { SizedBox } from '../SizedBox';
+import { Link } from '../Link';
 
 export {
     Colors,
@@ -17,5 +18,6 @@ export {
     Image,
     Row,
     SizedBox,
-    ContainerImage
+    ContainerImage,
+    Link
 };
