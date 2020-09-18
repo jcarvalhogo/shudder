@@ -18,13 +18,13 @@ function resolverEdgeInsets(edge?: EdgeInsetsGeometry, prefix?: string): string 
     if (edge !== undefined && prefix !== undefined) {
         let egderVales = edge.getEdge();
         switch (egderVales.length) {
-            case 1: return `${prefix}:${egderVales[0]}px;`;
-            case 2: return `${prefix}:${egderVales[1]}px ${egderVales[0]}px;`;
+            case 1: return `${prefix}:${egderVales[0]};`;
+            case 2: return `${prefix}:${egderVales[1]} ${egderVales[0]};`;
             case 4: return `
-            ${prefix}-top:${egderVales[0]}px; 
-            ${prefix}-right:${egderVales[1]}px; 
-            ${prefix}-bottom:${egderVales[2]}px;
-            ${prefix}-left:${egderVales[3]}px; 
+            ${prefix}-top:${egderVales[0]}; 
+            ${prefix}-right:${egderVales[1]}; 
+            ${prefix}-bottom:${egderVales[2]};
+            ${prefix}-left:${egderVales[3]}; 
             `;
             default: return '';
         }

@@ -1,5 +1,5 @@
 import { SingleChildRenderParams, Flexbox, BackgroundImageParams } from "../params/ElementesParams";
-import { resolveSingleChildRender, resolveSingleImagedRender } from "../resolvers/Resolver";
+import { reslverChild, resolveSingleChildRender, resolveSingleImagedRender } from "../resolvers/Resolver";
 import { SingleChildRender } from "./SingleChildRender";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 
@@ -12,7 +12,7 @@ export abstract class SingleChilImagedRender extends SingleChildRender implement
     public createElement(): string {
         return `
             <div style="display:flex;${resolveSingleChildRender(this.renderParams, this.flex)} ${resolveSingleImagedRender(this.backgroundImage || {})}">
-                ${this.renderParams.child || ''}
+            ${reslverChild(this.renderParams.child) || ''}
             </div>
         `;
     };

@@ -27,6 +27,7 @@ export class Application {
 
     private setStaticFolder() {
         this.app.use(express.static(path.join(__dirname, 'shared/css')));
+        this.app.use(express.static(path.join(__dirname, 'shared/fontes/Teko')));
 
         if (this.params.staticDirectory !== undefined) {
             let dirName = this.params.staticDirectory.dirName || '';

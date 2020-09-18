@@ -2,11 +2,11 @@ import { OnlyValues, SymmetricValues } from './ElementesParams'
 
 export interface EdgeInsetsGeometry {
 
-    all(value: number): any;
+    all(value: string): any;
 
     only(values: OnlyValues): any;
 
-    symmetric(values: { "horizontal": number, "vertical": number }): any;
+    symmetric(values: { "horizontal": string, "vertical": string }): any;
 
-    getEdge(): number[];
+    getEdge(): string[];
 }

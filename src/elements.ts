@@ -8,5 +8,6 @@ export {
     Row,
     SizedBox,
     ContainerImage,
-    Link
+    Link,
+    EdgeInsets
 } from './elements/params/exports';

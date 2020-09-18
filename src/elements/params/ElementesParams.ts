@@ -27,15 +27,15 @@ type BbackgroundRepeat = 'inherit' | 'initial' | 'no-repeat' | 'repeat' | 'repea
 type BackgroundSize = 'auto' | 'contain' | 'cover' | '100% 100%';
 
 export interface OnlyValues {
-    top: number;
-    bottom: number;
-    left: number;
-    right: number;
+    top: string;
+    bottom: string;
+    left: string;
+    right: string;
 }
 
 export interface SymmetricValues {
-    horizontal: number;
-    vertical: number;
+    horizontal: string;
+    vertical: string;
 }
 
 export interface Size {

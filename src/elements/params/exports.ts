@@ -8,6 +8,7 @@ import { ContainerImage } from '../ContainerImage';
 import { Row } from '../Row';
 import { SizedBox } from '../SizedBox';
 import { Link } from '../Link';
+import { EdgeInsets } from '../EdgeInsets';
 
 export {
     Colors,
@@ -19,5 +20,6 @@ export {
     Row,
     SizedBox,
     ContainerImage,
-    Link
+    Link,
+    EdgeInsets
 };

@@ -3,7 +3,7 @@ import { resolverSize } from "./resolvers/Resolver";
 import { SingleChildRenderMethods } from "./renders/SingleChildRenderMethods";
 
 export class SizedBox implements SingleChildRenderMethods{
-    public constructor(private size: Size, child: string) { };
+    public constructor(private size: Size) { };
 
     createElement() {
         return `

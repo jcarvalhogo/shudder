@@ -3,13 +3,13 @@ import { OnlyValues, SymmetricValues } from './params/ElementesParams';
 
 export class EdgeInsets implements EdgeInsetsGeometry {
 
-    private edge: number[];
+    private edge: string[];
 
     constructor() {
         this.edge = [];
     }
 
-    public all(value: number): EdgeInsetsGeometry {
+    public all(value: string): EdgeInsetsGeometry {
         this.edge = [value]
         return this;
     }
@@ -24,7 +24,7 @@ export class EdgeInsets implements EdgeInsetsGeometry {
         return this;
     }
 
-    public getEdge(): number[] {
+    public getEdge(): string[] {
         return this.edge;
     }
 }
