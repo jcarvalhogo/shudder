@@ -6,6 +6,8 @@ import { ApplicationParams } from './params/CoreParams';
 import { resolverPage } from './resolvers/CoreResolvers';
 import { NavigationPage } from './NavigationPage';
 import { PageBasic } from 'core';
+import { PageStyle } from './params/PageStyle';
+import { CreateCssStyleApp } from './CssCreate';
 
 //app.set('port', process.env.PORT || 3000)
 
@@ -19,6 +21,8 @@ export class Application {
     }
 
     private initServer(): void {
+        PageStyle.resetStyle();
+
         this.setStaticFolder();
         this.middlewares();
         this.setRouter();
@@ -27,7 +31,9 @@ export class Application {
 
     private setStaticFolder() {
         this.app.use(express.static(path.join(__dirname, 'shared/css')));
+        this.app.use(express.static(path.join(__dirname, 'shared/js')));
         this.app.use(express.static(path.join(__dirname, 'shared/fontes/Teko')));
+        this.app.use(express.static(path.join(__dirname, 'shared/fontes/Roboto')));
 
         if (this.params.staticDirectory !== undefined) {
             let dirName = this.params.staticDirectory.dirName || '';
@@ -47,13 +53,17 @@ export class Application {
 
     private setRouter(): void {
         this.app.get('/', (req: Request, res: Response) => {
-            res.send(resolverPage(this.params.home));
+            let webpage = resolverPage(this.params.home);
+            CreateCssStyleApp();
+            res.send(webpage);
         });
 
         if (this.params.pages !== undefined) {
             this.params.pages.forEach((page) => {
                 this.app.get(page.getNavigationParams().path, (req: Request, res: Response) => {
-                    res.send(page.createElement());
+                    let webpages = page.createElement(); 
+                    CreateCssStyleApp();
+                    res.send(webpages);
                 });
             });
         }

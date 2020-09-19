@@ -3,6 +3,7 @@ import { Colors, Column, Link, Text } from "../src/elements";
 
 export function Contato(): NavigationPage {
     return new NavigationPage({
+        styleSheetName: 'contato',
         child: new Column({
             width: '100%',
             height: '200px',

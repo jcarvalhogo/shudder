@@ -1,3 +1,4 @@
+import { PageStyle } from "core/params/PageStyle";
 import { ContainerMultipleParams } from "../params/ElementesParams";
 import { resolverMultiChildRender } from "../resolvers/Resolver";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
@@ -9,6 +10,10 @@ export class MultiChildRender implements SingleChildRenderMethods {
 
 
     createElement(): string {
+        PageStyle.sectionCount++;
+        let className = `section_${PageStyle.sectionCount}`;
+        let att = `display:flex;flex-direction:${this.params.direction};${resolverMultiChildRender(this.params.p)}`;
+        PageStyle.cssClass.push({ name: `.${className}`, atributos: att });
 
         let children: string = '';
         if (this.params.p.children !== undefined) {
@@ -17,7 +22,7 @@ export class MultiChildRender implements SingleChildRenderMethods {
             });
         }
 
-        return `<section style="display:flex;flex-direction:${this.params.direction};${resolverMultiChildRender(this.params.p)}">
+        return `<section class="${className}">
             ${children}
 </section>`;
     }

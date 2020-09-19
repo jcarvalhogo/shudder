@@ -32,7 +32,7 @@ function resolverEdgeInsets(edge?: EdgeInsetsGeometry, prefix?: string): string 
 }
 
 export function resolverSize(size: Size): string {
-    return `width:${size.width || '0px'};height:${size.height || '0px'};`;
+    return `width:${size.width || 'auto'};height:${size.height || 'auto'};`;
 }
 
 export function resolverAlignment(alignment: Alignment): Flexbox {
@@ -45,10 +45,10 @@ export function resolverAlignment(alignment: Alignment): Flexbox {
 
 export function resolverFlex(flexbox: Flexbox) {
     let style: string = '';
-    style += `${typeof flexbox.flexDirection !== 'undefined' ? `flex-direction:${flexbox.flexDirection};` : ';'}`;
-    style += `${typeof flexbox.flexWrap !== 'undefined' ? `flex-wrap:${flexbox.flexWrap};` : ''}`;
-    style += `${typeof flexbox.justifyContent !== 'undefined' ? `justify-content:${flexbox.justifyContent};` : ''}`;
-    style += `${typeof flexbox.alignItems !== 'undefined' ? `align-items:${flexbox.alignItems};` : ''}`;
+    style += `${flexbox.flexDirection !== undefined ? `flex-direction:${flexbox.flexDirection};` : ''}`;
+    style += `${flexbox.flexWrap !== undefined ? `flex-wrap:${flexbox.flexWrap};` : ''}`;
+    style += `${flexbox.justifyContent !== undefined ? `justify-content:${flexbox.justifyContent};` : ''}`;
+    style += `${flexbox.alignItems !== undefined ? `align-items:${flexbox.alignItems};` : ''}`;
     return style;
 }
 

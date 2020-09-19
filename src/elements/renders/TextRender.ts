@@ -1,9 +1,10 @@
+import { PageStyle } from "core/params/PageStyle";
 import { TextRenderParams, TextTag } from "../params/ElementesParams";
 import { resolverTextRenderParams } from "../resolvers/Resolver";
 import { SingleChildRenderMethods } from "./SingleChildRenderMethods";
 
 
-export abstract class TextRender implements SingleChildRenderMethods{
+export abstract class TextRender implements SingleChildRenderMethods {
 
     public constructor(
         private value: string,
@@ -12,11 +13,13 @@ export abstract class TextRender implements SingleChildRenderMethods{
     ) { }
 
     public createElement(): string {
+        PageStyle.labelCount++;
+        let calssName = `label_${PageStyle.labelCount}`;
+        let att = resolverTextRenderParams(this.params);
+        PageStyle.cssClass.push({ name: `.${calssName}`, atributos: att });
+
         return `
-            <${this.tag} style="${resolverTextRenderParams(this.params)}">
-                ${this.value}
-            </${this.tag}>
-        `;
+            <${this.tag} class="${calssName}">${this.value}</${this.tag}>`;
     };
 
 }

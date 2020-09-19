@@ -8,20 +8,24 @@ import { Produtos } from './Produtos';
 
 
 new Application({
+    staticDirectory: { dirName: __dirname, directory: ['shared/images'] },
     pages: [
         Contato(),
         Produtos(),
     ],
     home: new PageBasic({
         title: 'Page Basic',
+        styleSheetName: 'home',
         child: new Center({
             width: '100%',
             height: '80px',
             backgroundColor: Colors.lime(),
-            child: new Column({children:[
-                new Link({ target: '_self', href: '/contato', child: new Text('CONTATO'), }),
-                new Link({ target: '_self', href: '/produto', child: new Text('PRODUTO'), }),
-            ]}),
+            child: new Column({
+                children: [
+                    new Link({ target: '_self', href: '/contato', child: new Text('CONTATO'), }),
+                    new Link({ target: '_self', href: '/produto', child: new Text('PRODUTO'), }),
+                ]
+            }),
         }),
     }),
 });
