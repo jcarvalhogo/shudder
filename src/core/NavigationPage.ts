@@ -19,7 +19,7 @@ export class NavigationPage {
     public createElement(): string {
         PageStyle.resetStyle();
         PageStyle.styleName = this.paramas.styleSheetName.trim() || 'basic';
-        PageStyle.cssClass.push({ name: 'body', atributos: this.paramas.bodyInit || 'padding: 0px; margin: 0px;' })
+        PageStyle.cssClass.set('body', { name: 'body', atributos: this.paramas.bodyInit || 'padding: 0px; margin: 0px;' })
 
         return `
         <!DOCTYPE html>

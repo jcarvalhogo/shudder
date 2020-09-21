@@ -26,6 +26,8 @@ type BackgroundPosition = 'bottom' | 'center' | 'inherit' | 'initial' | 'left' |
 type BbackgroundRepeat = 'inherit' | 'initial' | 'no-repeat' | 'repeat' | 'repeat-x' | 'repeat-y' | 'round' | 'space' | 'unset';
 type BackgroundSize = 'auto' | 'contain' | 'cover' | '100% 100%';
 
+export type Cursor = 'alias' | 'all-scroll' | 'auto' | 'cell' | 'context-menu' | 'col-resize' | 'copy' | 'crosshair' | 'default' | 'e-resize' | 'ew-resize' | 'grab' | 'grabbing' | 'help' | 'move' | 'n-resize' | 'ne-resize' | 'nesw-resize' | 'ns-resize' | 'nw-resize' | 'nwse-resize' | 'no-drop' | 'none' | 'not-allowed' | 'pointer' | 'progress' | 'row-resize' | 's-resize' | 'se-resize' | 'sw-resize' | 'text' | 'url(myBall.cur),auto' | 'vertical-text' | 'w-resize' | 'wait' | 'zoom-in' | 'zoom-out' | 'initial';
+
 export interface OnlyValues {
     top: string;
     bottom: string;
@@ -112,11 +114,8 @@ export interface TextRenderParams {
     alignTextOption?: AlignTextOption;
 }
 
-export interface LinkRenderParams {
-    href?: string,
-    type?: string,
-    child?: elementype,
-    target?: targettype,
+export interface Hover {
+
 }
 
 export interface ImageParams extends Size {

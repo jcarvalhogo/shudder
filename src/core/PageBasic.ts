@@ -11,7 +11,7 @@ export class PageBasic implements SingleChildRenderMethods {
     public createElement(): string {
         PageStyle.resetStyle();
         PageStyle.styleName = this.params.styleSheetName.trim() || 'basic';
-        PageStyle.cssClass.push({ name: 'body', atributos: this.params.bodyInit || 'padding: 0px; margin: 0px;' })
+        PageStyle.cssClass.set('body', { name: 'body', atributos: this.params.bodyInit || 'padding: 0px; margin: 0px;' })
 
         return `
         <!DOCTYPE html>

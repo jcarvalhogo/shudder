@@ -16,7 +16,7 @@ export abstract class TextRender implements SingleChildRenderMethods {
         PageStyle.labelCount++;
         let calssName = `label_${PageStyle.labelCount}`;
         let att = resolverTextRenderParams(this.params);
-        PageStyle.cssClass.push({ name: `.${calssName}`, atributos: att });
+        PageStyle.cssClass.set(calssName, { name: `.${calssName}`, atributos: att });
 
         return `
             <${this.tag} class="${calssName}">${this.value}</${this.tag}>`;

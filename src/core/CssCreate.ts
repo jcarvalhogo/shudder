@@ -2,7 +2,7 @@ import fs from 'fs';
 import { attributes, ClassCss } from './params/CoreParams';
 import { PageStyle } from './params/PageStyle';
 
-function generateClass(classCss: ClassCss[]) {
+function generateClass(classCss: Map<string, ClassCss>) {
     let cssFile = ''
     classCss.forEach(nclass => {
         cssFile += `${nclass.name}{${nclass.atributos}}\n`

@@ -8,7 +8,7 @@ function Whatsapp() {
         alignItems: 'center',
         children: [
             new Image({
-                src: 'whatsapp.svg',
+                src: 'icons/whatsapp.svg',
                 width: '34'
             }),
             new SizedBox({ width: '7px' },),
@@ -24,7 +24,7 @@ function Message() {
         alignItems: 'center',
         children: [
             new Image({
-                src: 'telefone.svg',
+                src: 'icons/telefone.svg',
                 width: '32'
             }),
             new SizedBox({ width: '7px' },),
@@ -40,7 +40,7 @@ function Email() {
         alignItems: 'center',
         children: [
             new Image({
-                src: 'email.svg',
+                src: 'icons/email.svg',
                 width: '32'
             }),
             new SizedBox({ width: '7px' },),

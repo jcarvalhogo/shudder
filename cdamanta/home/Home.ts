@@ -26,7 +26,7 @@ export function Home() {
                         ],
                     }),
                 }, {
-                    image: 'fundo.png',
+                    image: 'images/fundo.png',
                     position: 'center',
                     size: 'cover',
                     repeat: 'no-repeat'

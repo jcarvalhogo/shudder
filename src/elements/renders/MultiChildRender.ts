@@ -13,7 +13,7 @@ export class MultiChildRender implements SingleChildRenderMethods {
         PageStyle.sectionCount++;
         let className = `section_${PageStyle.sectionCount}`;
         let att = `display:flex;flex-direction:${this.params.direction};${resolverMultiChildRender(this.params.p)}`;
-        PageStyle.cssClass.push({ name: `.${className}`, atributos: att });
+        PageStyle.cssClass.set(className, { name: `.${className}`, atributos: att });
 
         let children: string = '';
         if (this.params.p.children !== undefined) {

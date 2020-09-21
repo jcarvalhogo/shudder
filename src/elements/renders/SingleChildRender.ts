@@ -12,7 +12,7 @@ export abstract class SingleChildRender implements SingleChildRenderMethods {
         PageStyle.childCount++;
         let className = `child_${PageStyle.childCount}`;
         let att = `display:flex;${resolveSingleChildRender(this.params, this.flexbox)};`;
-        PageStyle.cssClass.push({ name: `.${className}`, atributos: att });
+        PageStyle.cssClass.set(className, { name: `.${className}`, atributos: att });
 
         return `
             <div class="${className}">

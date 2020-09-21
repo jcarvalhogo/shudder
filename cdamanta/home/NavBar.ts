@@ -1,3 +1,6 @@
+import { LinkStyle } from "../../src/core/style-classes/LinkStyle";
+import { Padding } from "../../src/core/style-classes/Padding";
+import { StyleClass } from "../../src/core/style-classes/StyleClass";
 import { Colors, Container, EdgeInsets, Row, Image, Text, Link, SizedBox, Center } from "../../src/elements";
 
 function LogoMarca() {
@@ -6,7 +9,7 @@ function LogoMarca() {
         width: '330px',
         alignItems: 'center',
         children: [
-            new Image({ src: 'logo.svg', width: '64' }),
+            new Image({ src: 'icons/logo.svg', width: '64' }),
             new Container({
                 margin: new EdgeInsets().symmetric({ horizontal: '10px', vertical: '0px' }),
                 height: '90px',
@@ -19,7 +22,7 @@ function LogoMarca() {
     })
 }
 
-function LinksNave() {
+function LinksNave(st: LinkStyle) {
     let fontsize = '1.4rem';
     return new Row({
         width: '700px',
@@ -28,21 +31,27 @@ function LinksNave() {
         alignContent: 'space-between',
         children: [
             new Link({
+                linkStyle: st,
                 child: new Text('Home', { fontSize: fontsize, color: '#fff' }),
             }),
             new Link({
+                linkStyle: st,
                 child: new Text('Noticias', { fontSize: fontsize, color: '#fff' }),
             }),
             new Link({
+                linkStyle: st,
                 child: new Text('Projetos', { fontSize: fontsize, color: '#fff' }),
             }),
             new Link({
+                linkStyle: st,
                 child: new Text('Serviços', { fontSize: fontsize, color: '#fff' }),
             }),
             new Link({
+                linkStyle: st,
                 child: new Text('Contato', { fontSize: fontsize, color: '#fff' }),
             }),
             new Link({
+                linkStyle: st,
                 child: new Center({
                     width: '160px',
                     height: '54px',
@@ -55,6 +64,12 @@ function LinksNave() {
 }
 
 export function NavBar() {
+    let hoverLink = new StyleClass({ backgroundColor: Colors.green() });
+    let styleLink = new StyleClass({ padding: new Padding().all(30) });
+
+    let st = new LinkStyle({ className: 'link_nave', style: styleLink, hover: hoverLink });
+
+
     return new Container({
         width: '100%',
         height: '112px',
@@ -67,7 +82,7 @@ export function NavBar() {
             alignContent: 'space-between',
             children: [
                 LogoMarca(),
-                LinksNave()
+                LinksNave(st)
             ],
         }),
     });
