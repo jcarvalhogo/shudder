@@ -19,12 +19,14 @@ body{padding: 0px; margin: 0px;}
 .child_4{display:flex;width:240px;height:90px;margin:0px 10px;flex-direction:column;justify-content:flex-end;align-items:flex-start;;}
 .label_5{font-family: Arial, Helvetica, sans-serif;font-size: 3rem;color: #FC3809;}
 .section_10{display:flex;flex-direction:row;width:700px;height:80px;justify-content:space-between;align-items:center;}
-.link_nave{text-decoration: none;padding: 30px;}
-.link_nave:hover{text-decoration: none;background-color: #4CAF50;}
-.label_6{font-family: Arial, Helvetica, sans-serif;font-size: 1.4rem;color: #fff;}
-.label_7{font-family: Arial, Helvetica, sans-serif;font-size: 1.4rem;color: #fff;}
-.label_8{font-family: Arial, Helvetica, sans-serif;font-size: 1.4rem;color: #fff;}
-.label_9{font-family: Arial, Helvetica, sans-serif;font-size: 1.4rem;color: #fff;}
-.label_10{font-family: Arial, Helvetica, sans-serif;font-size: 1.4rem;color: #fff;}
-.child_5{display:flex;width:160px;height:54px;background-color:#FC3809;flex-direction:column;justify-content:center;align-items:center;;}
-.label_11{font-family: Arial, Helvetica, sans-serif;font-size: 1.4rem;color: #fff;}
+.link_nave{text-decoration: none;padding: 14px 14px;}
+.link_nave:hover{text-decoration: none;border-bottom: 2px #003817 solid;}
+.link_nave:active{text-decoration: none;background-color: rgba(252, 56, 9, 0.5);}
+.label_6{font-family: Arial, Helvetica, sans-serif;font-size: 1.3rem;color: #fff;}
+.label_7{font-family: Arial, Helvetica, sans-serif;font-size: 1.3rem;color: #fff;}
+.label_8{font-family: Arial, Helvetica, sans-serif;font-size: 1.3rem;color: #fff;}
+.label_9{font-family: Arial, Helvetica, sans-serif;font-size: 1.3rem;color: #fff;}
+.label_10{font-family: Arial, Helvetica, sans-serif;font-size: 1.3rem;color: #fff;}
+.link_nave_btn{text-decoration: none;background-color: #FC3809;padding: 14px 14px;}
+.link_nave_btn:hover{text-decoration: none;background-color: rgba(252, 56, 9, 0.5);}
+.label_11{font-family: Arial, Helvetica, sans-serif;font-size: 1.3rem;color: #fff;}

@@ -25,10 +25,17 @@ export abstract class LinkRender implements SingleChildRenderMethods {
                 atributos: this.params.linkStyle.getStyleClass()
             });
 
-            PageStyle.cssClass.set(`${this.cn}:hover`, {
-                name: `.${this.cn}:hover`,
-                atributos: this.params.linkStyle.getHoverClass()
-            });
+            if (this.params.linkStyle.getHoverClass() !== 'undefined')
+                PageStyle.cssClass.set(`${this.cn}:hover`, {
+                    name: `.${this.cn}:hover`,
+                    atributos: this.params.linkStyle.getHoverClass(),
+                });
+
+            if (this.params.linkStyle.getActiveClass() !== 'undefined')
+                PageStyle.cssClass.set(`${this.cn}:active`, {
+                    name: `.${this.cn}:active`,
+                    atributos: this.params.linkStyle.getActiveClass(),
+                });
         }
 
         return `

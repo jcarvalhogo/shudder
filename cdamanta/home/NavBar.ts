@@ -1,6 +1,4 @@
-import { LinkStyle } from "../../src/core/style-classes/LinkStyle";
-import { Padding } from "../../src/core/style-classes/Padding";
-import { StyleClass } from "../../src/core/style-classes/StyleClass";
+import { Border, LinkStyle, Padding, StyleClass } from "../../src/styles";
 import { Colors, Container, EdgeInsets, Row, Image, Text, Link, SizedBox, Center } from "../../src/elements";
 
 function LogoMarca() {
@@ -22,8 +20,8 @@ function LogoMarca() {
     })
 }
 
-function LinksNave(st: LinkStyle) {
-    let fontsize = '1.4rem';
+function LinksNave(st: LinkStyle, stbtn: LinkStyle) {
+    let fontsize = '1.3rem';
     return new Row({
         width: '700px',
         height: '80px',
@@ -51,23 +49,22 @@ function LinksNave(st: LinkStyle) {
                 child: new Text('Contato', { fontSize: fontsize, color: '#fff' }),
             }),
             new Link({
-                linkStyle: st,
-                child: new Center({
-                    width: '160px',
-                    height: '54px',
-                    backgroundColor: '#FC3809',
-                    child: new Text('Fale conosco', { fontSize: fontsize, color: '#fff' }),
-                }),
+                linkStyle: stbtn,
+                child: new Text('Fale conosco', { fontSize: fontsize, color: '#fff' }),
             }),
         ]
     });
 }
 
 export function NavBar() {
-    let hoverLink = new StyleClass({ backgroundColor: Colors.green() });
-    let styleLink = new StyleClass({ padding: new Padding().all(30) });
+    let hoverLink = new StyleClass({ border: new Border({ position: 'border-bottom', color: '#003817', size: 2, style: 'solid' }) });
+    let styleLink = new StyleClass({ padding: new Padding().symmetric({ horizontal: 20, vertical: 14 }) });
+    let hoverLinkACT = new StyleClass({ backgroundColor: 'rgba(252, 56, 9, 0.5)' });
+    let st = new LinkStyle({ className: 'link_nave', style: styleLink, hover: hoverLink, active: hoverLinkACT });
 
-    let st = new LinkStyle({ className: 'link_nave', style: styleLink, hover: hoverLink });
+    let hoverLinkBTN = new StyleClass({ backgroundColor: 'rgba(252, 56, 9, 0.5)' });
+    let styleLinkBTN = new StyleClass({ backgroundColor: '#FC3809', padding: new Padding().symmetric({ horizontal: 20, vertical: 14 }) });
+    let stbtn = new LinkStyle({ className: 'link_nave_btn', style: styleLinkBTN, hover: hoverLinkBTN });
 
 
     return new Container({
@@ -82,7 +79,7 @@ export function NavBar() {
             alignContent: 'space-between',
             children: [
                 LogoMarca(),
-                LinksNave(st)
+                LinksNave(st, stbtn)
             ],
         }),
     });

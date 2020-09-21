@@ -2,7 +2,6 @@ import { Padding } from "./Padding";
 import { Margin } from "./Margin";
 import { Border } from "./Border";
 import { BorderRadius } from "./BorderRadius";
-import { Color } from "elements/params/ElementesParams";
 
 export class StyleClass {
 

@@ -1,7 +1,7 @@
 import { EdgeInsetsGeometry } from './EdgeInsetsGeometry';
 import { elementype, targettype } from '../../core/resolvers/CoreResolvers';
 
-type ColorValue = string;
+export type ColorValue = string;
 
 type AlignContent = 'space-around' | 'space-between' | 'space-evenly' | 'flex-start' | 'flex-end' | 'center';
 type AlignItems = 'flex-end' | 'flex-start' | 'center';
